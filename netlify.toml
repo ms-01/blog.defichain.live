@@ -1,0 +1,9 @@
+[build]
+  publish = "offline"
+  command = "echo Publishing pre-generated DeFiChain Blog archive"
+
+[[headers]]
+  for = "/*"
+  [headers.values]
+    X-Content-Type-Options = "nosniff"
+    Referrer-Policy = "strict-origin-when-cross-origin"

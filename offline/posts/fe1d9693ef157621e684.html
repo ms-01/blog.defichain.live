@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>The Evolution of DeFiChain: From UTXO to MetaChain</title>
+<link rel="stylesheet" href="../style.css">
+<link rel="stylesheet" href="../defichain-theme.css">
+<link rel="icon" type="image/svg+xml" href="../assets/favicon.svg">
+</head>
+<body>
+<header class="site-header">
+  <div class="header-inner">
+    <a class="brand" href="https://defichain.live/" aria-label="DeFiChain.live">
+      <img src="../assets/dfi.png" alt="DeFiChain">
+    </a>
+    <nav class="site-nav" aria-label="Main navigation">
+      <a href="https://defichain.live/">Explore</a>
+      <a class="active" href="../index.html">Blog</a>
+      <a href="https://defichain.live/community">Community</a>
+    </nav>
+  </div>
+</header>
+<main><nav class="article-back-nav" aria-label="Article navigation"><a href="../index.html">← Back to Blog</a></nav><article><h1>The Evolution of DeFiChain: From UTXO to MetaChain</h1><p class="date">2023-06-08</p><p style="text-align: justify;"></p><div class="separator" style="clear: both; text-align: center;"><a href="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEj-tPBamVUFwSTQ8svj51CfZi_2sIWBMVKuvekMTbsnIqNKkgxDtB3UN7cr6-iQw-JUMvrmsHIovIyQHJOHaDHzKBsAvc6mQpycEc3x79SJA0ZwfZhypegnPTlYyxKTOcqGWU0vChc3CEOY9add8HC97RZ9nZJLhgVRoSSNSdmTnzxrmsXp5rn3oW8zkwc/s1440/1440x536PX_Blog-Banner_The-Evolution-of-DeFiChain.png" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><img border="0" data-original-height="537" data-original-width="1440" height="238" src="../media/b069070d10d5422883e3.png" width="640"></a></div><br>The world of decentralized finance (DeFi) is rapidly growing, with numerous platforms emerging to cater to the increased demand for secure, transparent, and easily accessible financial services.<p></p><p style="text-align: justify;">DeFiChain is one such platform. Starting out as a Bitcoin fork that utilizes elements from both Bitcoin's UTXO and Ethereum's account models, DeFiChain is transitioning into an innovative ecosystem where an Ethereum Virtual Machine (EVM) layer is built right into the native chain. The culmination of this evolution is Meta Chain – a groundbreaking new concept in the crypto space.</p><p style="text-align: justify;">In this article, we delve into the existing architecture of DeFiChain and explore its evolution into a universal data layer that promotes interoperability between various blockchains.</p><p style="text-align: justify;"><br></p><p style="text-align: justify;"><b>What is Bitcoin’s UTXO model?</b></p><p style="text-align: justify;">UTXO (Unspent Transaction Output) is a virtual representation of cash, serving as a core component of Bitcoin transactions. As Bitcoin’s value is modeled after physical cash, UTXO is necessary to facilitate its transaction flows.</p><p style="text-align: justify;">Similar to cash, UTXOs only allow you to spend what you possess, eliminating the risk of double-spending. To transfer value, a UTXO serves as the input, which subsequently splits into new UTXOs as the output. This process verifies the authenticity of the transferred value and preserves the decentralized security of the Bitcoin network.</p><p style="text-align: justify;">Suppose party A wants to transfer 1.5 BTC to party B today. Party A's wallet contains UTXOs of 1 BTC, 0.75 BTC, and 0.5 BTC. In this case, the Bitcoin blockchain will construct a transaction using the 1 BTC and 0.5 BTC UTXOs as inputs and will create a new UTXO of 0.25 BTC as the output.</p><div class="separator" style="clear: both; text-align: center;"><a href="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgDLr_BHVIzOHeq-EaFMn7p0PETlcnSPtd-KeIfgM4TSj-eg6vxrT1rFIRuufSJ9xJFaxSxZp64fa_U8M9XqcrSjzLcnVrdojHise8Occ0CSlgmrANSU0tWjxToc1mKWW3Y0ZHpS9DKRVK_ZID9R_T7UbR_SX5Cye-YyxOSVyHDp2rAtwPz_mIOmO3POk4/s825/40ymA95p0lcRGbZcoWg7Dwyzpw62-bn293azk.jpg" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><img border="0" data-original-height="425" data-original-width="825" height="330" src="../media/7b6182671d545c4f6e1b.jpg" width="640"></a></div><br><p style="text-align: justify;"><b>How does Bitcoin’s UTXO model compare to other blockchains?</b></p><p style="text-align: justify;">Compared to Bitcoin’s UTXO model, Ethereum and many other blockchain systems employ an account-based model. Instead of UTXOs, these systems manage value through ledgers. This approach makes it easy for more intricate operations like the execution of smart contracts.&nbsp; However, this newfound versatility changes the vulnerability model. For instance, should the ledger be manipulated, value can be created or destroyed in ways that the UTXO model cannot.</p><p style="text-align: justify;">The primary distinction between UTXOs and the account-based model lies in their objectives. Bitcoin's UTXO model aims to emulate the exchange of physical cash, offering a secure and straightforward method to transfer value. Conversely, Ethereum and other account-based systems cater to a diverse range of applications to deliver increased functionality, including the ability to create and engage with smart contracts.</p><div class="separator" style="clear: both; text-align: center;"><a href="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgWlofdLLimAt2TLyTnm6DBmoB8kBgdeGxeC0_IWx-jrRkUmOTGqEGlVIZ14AInS5gsfcsnrNytpWQF2jYm_O_afEpNexr2AD38YxtpBasmWRgihcOXhhYejUn5gUJZm9nNiLEZMTfVIeiUYyQ1vcqiOzuHCZdbby5BTmDfc8zus7HIgbQicdc4iNrafEc/s1000/utxo-dag-account-network-states-292d9cb3fe74cdaecf2892ee875f9cfd.jpg" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><img border="0" data-original-height="470" data-original-width="1000" height="300" src="../media/f6956d73c810d2725c71.jpg" width="640"></a></div><br><p style="text-align: justify;">Nonetheless, when working with smart contracts, users must recognize that their security is contingent upon the smart contract's security. When users interact with a smart contract, they share the “shared security model” of the smart contract, rendering them susceptible to potential exploits. This underscores the trade-offs between simplicity and security (Bitcoin's UTXO model) and functionality and complexity (Ethereum's account-based model).</p><p style="text-align: justify;"><br></p><p style="text-align: justify;"><b>DeFiChain's Hybrid Architecture: Merging Bitcoin's UTXO and Ethereum's Account Models</b></p><p style="text-align: justify;">DeFiChain's unique hybrid architecture brings together the best of both worlds: Bitcoin's Unspent Transaction Output (UTXO) model and Ethereum's account model.</p><p style="text-align: justify;">Initially forked from Bitcoin’s codebase, DeFiChain leverages its parent blockchain’s robustness and proven track record to maintain high levels of security. At the same time, DeFiChain deviates from being a traditional sidechain, serving as a unique, standalone blockchain that has developed its own distinct set of features and capabilities.</p><p style="text-align: justify;">DeFiChain's most remarkable feature is its hybrid architecture, which marries the UTXO model's security and simplicity with the flexibility and functionality of Ethereum's account model to manage tokens, pool pairs, and vaults.</p><p style="text-align: justify;">While the UTXO model ensures immutability and transparency in transaction history to prevent double-spending attacks, Ethereum's account model enables complex transactions, smart contracts, and seamless interactions with decentralized applications (dApps).</p><p style="text-align: justify;">By integrating the strengths of both Bitcoin and Ethereum, DeFiChain offers a secure and versatile platform for DeFi applications, demonstrating its dedication to revolutionize the DeFi ecosystem.</p><p style="text-align: justify;"><br></p><p style="text-align: justify;"><b>DeFi Transactions with UTXOs and Accounts</b></p><p style="text-align: justify;">A key challenge for DeFiChain is to facilitate DeFi transactions while linking UTXOs with account-based transactions. To address this issue, DeFiChain implemented Auto Auth, a process that automatically manages UTXOs and associates them with the relevant account-based transactions.</p><p style="text-align: justify;">With Auto Auth, when a user wants to initiate a DeFi transaction, the system checks their wallet for a suitable UTXO input. If the required input is not available, the system creates an Auto Auth transaction to redistribute the user's UTXOs and send the required amount to the desired address. This process may require two transactions: one to redistribute the UTXOs and another to execute the actual DeFi transaction.</p><p style="text-align: justify;">This innovative solution enables DeFiChain to provide the security and transparency of the UTXO model while also facilitating complex account-based transactions typically associated with Ethereum's account model. In turn, users enjoy a seamless and efficient DeFi experience on the DeFiChain platform.</p><p style="text-align: justify;">DeFiChain’s existing process will be elevated by the incorporation of an EVM layer. We will explore this transformation and examine the new architecture in the next section.</p><p class="date">Original: <a href="https://blog.defichain.com/2023/06/the-evolution-of-defichain-from-utxo-to.html">https://blog.defichain.com/2023/06/the-evolution-of-defichain-from-utxo-to.html</a></p></article></main>
+<footer class="blog-footer">
+  <div class="footer-panel">
+    <div class="footer-columns">
+      <div class="footer-column">
+        <h2>EXPLORE</h2>
+        <a href="https://defichain.live/">DeFiChain.live</a>
+        <a href="https://defichain.live/explore/dfi">$DFI</a>
+        <a href="https://defichain.live/explore/masternodes">Masternodes</a>
+      </div>
+      <div class="footer-column">
+        <h2>RESOURCES</h2>
+        <a href="https://github.com/ms-01">GitHub</a>
+        <a href="https://defiscan.live/">DeFiScan</a>
+      </div>
+      <div class="footer-column">
+        <h2>COMMUNITY</h2>
+        <a href="../index.html">Blog Archive</a>
+        <a href="https://github.com/ms-01/defichain.live">Website Repository</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <a href="https://defichain.live/" aria-label="DeFiChain.live">
+        <img src="../assets/dfi.png" alt="DeFiChain">
+      </a>
+      <p>
+        Independent preservation of historical DeFiChain Blog content.
+        Archived articles do not necessarily reflect the current state
+        of the DeFiChain ecosystem.
+      </p>
+    </div>
+  </div>
+</footer>
+</body>
+</html>

@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>How Stock Splits Affect DeFiChain Users</title>
+<link rel="stylesheet" href="../style.css">
+<link rel="stylesheet" href="../defichain-theme.css">
+<link rel="icon" type="image/svg+xml" href="../assets/favicon.svg">
+</head>
+<body>
+<header class="site-header">
+  <div class="header-inner">
+    <a class="brand" href="https://defichain.live/" aria-label="DeFiChain.live">
+      <img src="../assets/dfi.png" alt="DeFiChain">
+    </a>
+    <nav class="site-nav" aria-label="Main navigation">
+      <a href="https://defichain.live/">Explore</a>
+      <a class="active" href="../index.html">Blog</a>
+      <a href="https://defichain.live/community">Community</a>
+    </nav>
+  </div>
+</header>
+<main><nav class="article-back-nav" aria-label="Article navigation"><a href="../index.html">← Back to Blog</a></nav><article><h1>How Stock Splits Affect DeFiChain Users</h1><p class="date">2022-07-11</p><p style="text-align: justify;"></p><div class="separator" style="clear: both; text-align: center;"><a href="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgHgQvvX4xhRBcync0fPRDEYYPUWPsdfUeny1Gx3vk6a2Mx_Zm7WcbwQJ_SLuPfU5T9JIWf_uFniwTYh6Xawj8vwOsuejZy3FKDN2dGn6v-sutiSthZ-bLFaRaxoX-gdxd70-G420WBhC00VDLjxygQD9pUREfTi_0e7fHhSj8HfgyPG3PKTgFN6YpX_Ak/s1440/1440x536PX-_-Blog-Banner---DeFiChain-Stock-Splitt.png" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><img border="0" data-original-height="537" data-original-width="1440" height="238" src="../media/c0257688f6d532993d46.png" width="640"></a></div><br>&nbsp;LAST UPDATED: 18 August 2022<p></p><p style="text-align: justify;">Various companies have announced stock splits over the past year. Companies split their stocks for multiple reasons such as making their stock prices look more attractive to investors.</p><p style="text-align: justify;">Although the number of shares outstanding increases by a specific multiple, the total dollar value of all shares outstanding remains the same because a split does not fundamentally change the company's value.</p><p style="text-align: justify;">Changes like these have to be properly implemented on DeFiChain as well. As a result we came up with a process that applies to all future stock splits.</p><p style="text-align: justify;"><br></p><p style="text-align: justify;"><b>How do stock splits affect dTokens on DeFiChain?</b></p><p style="text-align: justify;">Since the minting of dTokens are dependent on the price oracles of the underlying, a stock split without adjusting the respective dToken would cause severe issues, resulting in a wrong price of previously minted dTokens. Hence, a split is inevitable to keep the respective dToken’s price in line with its underlying.</p><p style="text-align: justify;">A stock split follows a standardized procedure on DeFiChain, wherein a sophisticated mechanism guarantees a timely implementation with a minimum of downtime.</p><p style="text-align: justify;">DeFiChain users will observe the following key changes as a result of a stock split:</p><p style="text-align: justify;"></p><ol><li>Depending on the split ratio announced by the company (see table below), dToken owners will receive additional tokens for every 1 token that they own before the split (eg. in the case of AMZN which saw a 20-for-1 stock split, dAMZN token owners received 20 tokens for every 1 token that they owned before the split)</li><li>Updated price from oracles</li><li>Updated dToken ID: A new token ID will be assigned to the post-split dToken (If you are not familiar with this attribute, it likely will not affect you)</li></ol><p></p><p style="text-align: justify;">These changes are primarily implemented on the consensus layer, and little needs to be done by users of DeFiChain.</p><p style="text-align: justify;"><br></p><p style="text-align: justify;"><b>How are stock splits executed on DeFiChain?</b></p><p style="text-align: justify;">In order to implement the stock split adjustment as smoothly as possible, DeFiChain takes the following steps: DEX, vaults and systems interacting with the dToken will undergo a process called the lock, which is a mechanism meant to serve as protection from any unstable prices from the oracles during the transition period.</p><p style="text-align: justify;">The lock will start a few hours before the market opens and will be lifted some time after. The lock window of each stock changes accordingly, and details of each stock split can be found in the table below. In the case of dAMZN, the lock started 3 hours before the market opened, and was lifted 3 hours after. After the lock is lifted, vaults will be halted for 1 hour (standard vault safety mechanism) before they become operational again. The lock period changes from stock split to stock split and can be seen in the table below.</p><p style="text-align: justify;">Refer to the following table for updates on the latest stock splits:</p><div class="separator" style="clear: both; text-align: center;"><a href="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEivKCy31p86SO9mlxmf85AOvcbYdbfusDMvYRsLU8eW6SO4l42ZZC_8U3hMu_H6MfTA8mIkTe-HViksN219SohD4UVF0whM91D5kMMfJm5S_YFNx2OJysuAHrG2zEQzISy9yo7f035fwSu0Y2D_W9zWESKDG1F-j0zLhbM8x-ZGLgq5Y2hdNMFWhGf_P7M/s1801/Blog-content---Table.png" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><img border="0" data-original-height="1032" data-original-width="1801" height="366" src="../media/546a3eda618f811572d8.png" width="640"></a></div>Using dTSLA to illustrate the timeline of events:<div><br><div class="separator" style="clear: both; text-align: center;"><a href="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjOB76yFm-Udf9gXKz8WfsPRgd5iPYzfXccoelh1NJTPqycPzeJCipcTlUokIRYGJzCGuLrSCjd0Z24kV9ZP4CtNg_oE-zk-KYr5F5QKHxlF1a92GepXUMexHFNO1PUHD8xwVD-XFBWlLy6pUcN5LTH4TJWne17wy70SB4tBVAfz0ehoO_nU1JrWRSxjcw/s1000/Blog-content---Timeline.png" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><img border="0" data-original-height="398" data-original-width="1000" height="254" src="../media/815005c0bb6ebacc277a.png" width="640"></a></div><p style="text-align: justify;"><b>Summary</b></p><p style="text-align: justify;">DEX users and dToken owners will experience a lock window, which takes place a few hours before the market opens and will be lifted some time after. The length of the lock window will depend on the specific stock split; more details for each stock split can be found in the table above. During this period, there will be no interaction with the respective dToken. dToken vault owners will also experience an additional 1-hour halt on top of the lock period.</p><p style="text-align: justify;">No action is required except to take note of the lock period (window before the market opens and window after, and an additional 1-hour for dToken vault owners).</p><p style="text-align: justify;"><br></p><p style="text-align: justify;"><br></p><p style="text-align: justify;"><br></p><p style="text-align: justify;"><br></p></div><p class="date">Original: <a href="https://blog.defichain.com/2022/07/how-stock-splits-affect-defichain-users.html">https://blog.defichain.com/2022/07/how-stock-splits-affect-defichain-users.html</a></p></article></main>
+<footer class="blog-footer">
+  <div class="footer-panel">
+    <div class="footer-columns">
+      <div class="footer-column">
+        <h2>EXPLORE</h2>
+        <a href="https://defichain.live/">DeFiChain.live</a>
+        <a href="https://defichain.live/explore/dfi">$DFI</a>
+        <a href="https://defichain.live/explore/masternodes">Masternodes</a>
+      </div>
+      <div class="footer-column">
+        <h2>RESOURCES</h2>
+        <a href="https://github.com/ms-01">GitHub</a>
+        <a href="https://defiscan.live/">DeFiScan</a>
+      </div>
+      <div class="footer-column">
+        <h2>COMMUNITY</h2>
+        <a href="../index.html">Blog Archive</a>
+        <a href="https://github.com/ms-01/defichain.live">Website Repository</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <a href="https://defichain.live/" aria-label="DeFiChain.live">
+        <img src="../assets/dfi.png" alt="DeFiChain">
+      </a>
+      <p>
+        Independent preservation of historical DeFiChain Blog content.
+        Archived articles do not necessarily reflect the current state
+        of the DeFiChain ecosystem.
+      </p>
+    </div>
+  </div>
+</footer>
+</body>
+</html>

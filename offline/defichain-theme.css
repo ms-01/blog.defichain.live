@@ -1,0 +1,712 @@
+:root {
+  color-scheme: dark;
+  --background: #050505;
+  --surface: #111111;
+  --surface-hover: #191919;
+  --border: #303030;
+  --text: #f5f5f5;
+  --muted: #a8a8a8;
+  --accent: #ec008c;
+  --accent-secondary: #8b35e8;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  background: var(--background);
+  color: var(--text);
+  font-family: Inter, -apple-system, BlinkMacSystemFont, "Segoe UI",
+    Arial, sans-serif;
+  font-size: 16px;
+  line-height: 1.75;
+}
+
+header {
+  background: #080808;
+  border-bottom: 1px solid var(--border);
+  padding: 22px max(24px, calc((100% - 1120px) / 2));
+}
+
+header a {
+  color: #ffffff;
+  text-decoration: none;
+  font-size: 22px;
+  font-weight: 600;
+  letter-spacing: -0.5px;
+}
+
+header a:hover {
+  color: var(--accent);
+}
+
+main {
+  max-width: 1120px;
+  margin: 48px auto 80px;
+  padding: 0 24px;
+}
+
+main > h1 {
+  font-size: clamp(34px, 5vw, 56px);
+  font-weight: 500;
+  letter-spacing: -1.5px;
+  line-height: 1.2;
+  margin-bottom: 12px;
+}
+
+main > p {
+  color: var(--muted);
+  margin-bottom: 36px;
+}
+
+.entry {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 22px 26px;
+  margin-bottom: 12px;
+  transition: background 0.2s, border-color 0.2s;
+}
+
+.entry:hover {
+  background: var(--surface-hover);
+  border-color: var(--accent);
+}
+
+.entry a {
+  color: var(--text);
+  text-decoration: none;
+  font-size: 18px;
+  font-weight: 500;
+}
+
+.entry a:hover {
+  color: #ff65c5;
+}
+
+.date {
+  color: var(--muted);
+  font-size: 13px;
+  letter-spacing: 0.3px;
+  margin-bottom: 7px;
+}
+
+article {
+  max-width: 860px;
+  margin: 0 auto;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: clamp(22px, 5vw, 56px);
+  overflow-wrap: anywhere;
+}
+
+article h1 {
+  font-size: clamp(30px, 4vw, 44px);
+  line-height: 1.2;
+  font-weight: 500;
+}
+
+article h2,
+article h3 {
+  line-height: 1.35;
+  margin-top: 1.6em;
+}
+
+article a {
+  color: #fa67c6;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+article a:hover {
+  color: #ffffff;
+}
+
+article img,
+article video,
+article iframe {
+  max-width: 100%;
+  height: auto;
+  border-radius: 8px;
+}
+
+article pre {
+  max-width: 100%;
+  overflow-x: auto;
+  background: #080808;
+  padding: 16px;
+  border-radius: 8px;
+}
+
+article blockquote {
+  margin: 24px 0;
+  padding: 10px 24px;
+  border-left: 3px solid var(--accent);
+  color: #d0d0d0;
+  background: #181818;
+}
+
+footer {
+  border-top: 1px solid var(--border);
+  padding: 32px 24px;
+  color: var(--muted);
+  text-align: center;
+  font-size: 13px;
+}
+
+a:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 3px;
+}
+
+@media (max-width: 640px) {
+  header {
+    padding: 18px 20px;
+  }
+
+  main {
+    margin: 30px auto 50px;
+    padding: 0 16px;
+  }
+
+  .entry {
+    padding: 18px;
+  }
+
+  .entry a {
+    font-size: 16px;
+  }
+
+  article {
+    padding: 22px 18px;
+  }
+}
+
+
+/* DeFiChain.live blog navigation */
+
+.site-header {
+  background: #050505;
+  border-bottom: 1px solid #252525;
+  padding: 0 24px;
+}
+
+.header-inner {
+  max-width: 1120px;
+  min-height: 108px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 32px;
+}
+
+.site-header .brand {
+  display: inline-flex;
+  align-items: center;
+  flex-shrink: 0;
+}
+
+.site-header .brand img {
+  display: block;
+  width: 180px;
+  height: auto;
+}
+
+.site-nav {
+  display: flex;
+  align-items: center;
+  gap: clamp(18px, 3vw, 52px);
+}
+
+.site-nav a {
+  color: #999999;
+  font-size: 17px;
+  font-weight: 500;
+  text-decoration: none;
+  letter-spacing: 0;
+}
+
+.site-nav a:hover,
+.site-nav a.active {
+  color: #ff00af;
+}
+
+@media (max-width: 640px) {
+  .site-header {
+    padding: 0 16px;
+  }
+
+  .header-inner {
+    min-height: 90px;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0;
+    padding: 12px 0;
+  }
+
+  .site-header .brand img {
+    width: 155px;
+  }
+
+  .site-nav {
+    width: 100%;
+    justify-content: center;
+    gap: 24px;
+    padding: 8px 0;
+  }
+
+  .site-nav a {
+    font-size: 14px;
+  }
+}
+
+
+/* DeFiChain.live blog hero and feature icons */
+
+.blog-hero {
+  padding: 60px 0 36px;
+}
+
+.blog-hero .hero-label {
+  color: #ff00af;
+  font-size: 14px;
+  font-weight: 500;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  margin: 0 0 20px;
+}
+
+.blog-hero h1 {
+  color: #ffffff;
+  font-size: clamp(48px, 6vw, 82px);
+  font-weight: 400;
+  letter-spacing: -2px;
+  line-height: 1.1;
+  margin: 0 0 24px;
+}
+
+.blog-hero .hero-description {
+  color: #a3a3a3;
+  font-size: clamp(17px, 2vw, 22px);
+  line-height: 1.6;
+  max-width: 720px;
+  margin: 0 0 20px;
+}
+
+.blog-hero .archive-count {
+  color: #888888;
+  font-size: 14px;
+  margin: 0;
+}
+
+.blog-features {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 24px;
+  padding: 30px 0 55px;
+  border-bottom: 1px solid #292929;
+}
+
+.blog-features .feature {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 16px;
+  min-width: 0;
+  padding: 20px 0;
+}
+
+.blog-features .feature svg {
+  width: 64px;
+  height: 64px;
+  transition: transform 0.2s ease;
+}
+
+.blog-features .feature:hover svg {
+  transform: translateY(-4px);
+}
+
+.blog-features .feature span {
+  color: #eeeeee;
+  font-size: 14px;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+}
+
+.articles-heading {
+  color: #ffffff;
+  font-size: 26px;
+  font-weight: 500;
+  margin: 48px 0 28px;
+}
+
+@media (max-width: 640px) {
+  .blog-hero {
+    padding: 30px 0 24px;
+  }
+
+  .blog-hero h1 {
+    letter-spacing: -1px;
+  }
+
+  .blog-features {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 12px;
+    padding: 20px 0 32px;
+  }
+
+  .blog-features .feature {
+    padding: 12px 0;
+  }
+
+  .blog-features .feature svg {
+    width: 48px;
+    height: 48px;
+  }
+
+  .blog-features .feature span {
+    font-size: 12px;
+  }
+
+  .articles-heading {
+    margin-top: 32px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .blog-features .feature svg {
+    transition: none;
+  }
+}
+
+
+/* Original DeFiChain.com typography alignment */
+
+.blog-hero h1 {
+  font-family: "Space Grotesk", sans-serif;
+  font-size: 48px;
+  line-height: 52px;
+  font-weight: 400;
+  letter-spacing: normal;
+}
+
+.blog-hero .hero-description {
+  font-family: "Montserrat", sans-serif;
+  font-size: 16px;
+  line-height: 26px;
+  letter-spacing: 0.03em;
+  font-weight: 400;
+}
+
+.site-nav a {
+  font-family: "Space Grotesk", sans-serif;
+  font-weight: 600;
+}
+
+.blog-features .feature span {
+  font-family: "Space Grotesk", sans-serif;
+  font-weight: 600;
+}
+
+@media (min-width: 1024px) {
+  .blog-hero h1 {
+    font-size: 80px;
+    line-height: 84px;
+  }
+
+  .blog-hero .hero-description {
+    font-size: 20px;
+    line-height: 32px;
+    letter-spacing: normal;
+  }
+
+  .site-nav a {
+    font-size: 18px;
+  }
+}
+
+
+/* DeFiChain.live blog footer */
+
+.blog-footer {
+  background: #000;
+  padding: 60px 24px 40px;
+  text-align: left;
+}
+
+.blog-footer .footer-panel {
+  max-width: 1120px;
+  margin: 0 auto;
+  padding: 48px 64px 36px;
+  border-radius: 30px;
+  background: linear-gradient(145deg, #181818, #101010);
+  border: 1px solid #292929;
+}
+
+.blog-footer .footer-columns {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 48px;
+  padding-bottom: 64px;
+}
+
+.blog-footer .footer-column {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 14px;
+}
+
+.blog-footer .footer-column h2 {
+  color: #fff;
+  font-family: "Space Grotesk", sans-serif;
+  font-size: 15px;
+  font-weight: 600;
+  letter-spacing: .05em;
+  margin: 0 0 12px;
+}
+
+.blog-footer .footer-column a {
+  color: #a6a6a6;
+  font-family: "Montserrat", sans-serif;
+  font-size: 14px;
+  line-height: 1.6;
+  text-decoration: none;
+}
+
+.blog-footer .footer-column a:hover {
+  color: #ff00af;
+}
+
+.blog-footer .footer-bottom {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 32px;
+  padding-top: 32px;
+  border-top: 1px solid #333;
+}
+
+.blog-footer .footer-bottom img {
+  display: block;
+  width: 176px;
+  height: auto;
+}
+
+.blog-footer .footer-bottom p {
+  color: #8c8c8c;
+  font-family: "Montserrat", sans-serif;
+  font-size: 12px;
+  line-height: 1.7;
+  max-width: 520px;
+  margin: 0;
+}
+
+@media (max-width: 767px) {
+  .blog-footer {
+    padding: 40px 16px 24px;
+  }
+
+  .blog-footer .footer-panel {
+    padding: 32px 24px;
+    border-radius: 24px;
+  }
+
+  .blog-footer .footer-columns {
+    grid-template-columns: 1fr;
+    gap: 32px;
+    padding-bottom: 36px;
+  }
+
+  .blog-footer .footer-bottom {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 20px;
+  }
+}
+
+/* Compact article archive */
+
+.archive-entry {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+}
+
+.archive-entry-icon {
+  display: flex;
+  flex: 0 0 48px;
+  width: 48px;
+  height: 48px;
+  align-items: center;
+  justify-content: center;
+}
+
+.archive-entry-icon svg {
+  display: block;
+  width: 42px;
+  height: 42px;
+}
+
+.archive-entry-content {
+  flex: 1;
+  min-width: 0;
+}
+
+.archive-category {
+  margin-top: 8px;
+  color: #8c8c8c;
+  font-family: "Space Mono", monospace;
+  font-size: 11px;
+  letter-spacing: 0.08em;
+}
+
+.year-archive {
+  margin-top: 72px;
+  padding-top: 32px;
+  border-top: 1px solid #333;
+}
+
+.year-archive h2 {
+  margin: 0 0 12px;
+  color: #fff;
+  font-family: "Space Grotesk", sans-serif;
+}
+
+.archive-intro {
+  color: #a6a6a6;
+  font-family: "Montserrat", sans-serif;
+  margin-bottom: 28px;
+}
+
+.archive-year {
+  margin-bottom: 12px;
+  border: 1px solid #333;
+  border-radius: 12px;
+  background: #121212;
+  overflow: hidden;
+}
+
+.archive-year summary {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 16px;
+  padding: 22px 26px;
+  cursor: pointer;
+  color: #fff;
+  font-family: "Space Grotesk", sans-serif;
+  font-size: 20px;
+  font-weight: 500;
+  list-style: none;
+}
+
+.archive-year summary::-webkit-details-marker {
+  display: none;
+}
+
+.archive-year summary::after {
+  content: "+";
+  color: #ff00af;
+  font-size: 26px;
+  margin-left: 12px;
+}
+
+.archive-year[open] summary::after {
+  content: "−";
+}
+
+.archive-year-count {
+  margin-left: auto;
+  color: #a6a6a6;
+  font-family: "Montserrat", sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+}
+
+.archive-year-entries {
+  padding: 12px 20px 20px;
+  border-top: 1px solid #333;
+}
+
+.archive-year-entries .entry {
+  margin-bottom: 10px;
+}
+
+@media (max-width: 640px) {
+  .archive-entry {
+    gap: 14px;
+  }
+
+  .archive-entry-icon {
+    flex-basis: 36px;
+    width: 36px;
+    height: 36px;
+  }
+
+  .archive-entry-icon svg {
+    width: 34px;
+    height: 34px;
+  }
+
+  .archive-year summary {
+    padding: 18px;
+    font-size: 18px;
+  }
+
+  .archive-year-count {
+    font-size: 12px;
+  }
+
+  .archive-year-entries {
+    padding: 12px;
+  }
+}
+
+
+/* Category descriptions */
+.blog-features .feature small {
+  display: block;
+  margin-top: 7px;
+  color: #858585;
+  font-family: "Montserrat", sans-serif;
+  font-size: 11px;
+  font-weight: 400;
+  line-height: 1.5;
+  letter-spacing: 0;
+}
+
+@media (max-width: 640px) {
+  .blog-features .feature small {
+    font-size: 10px;
+  }
+}
+
+
+/* Article back navigation */
+.article-back-nav {
+  margin: 0 0 28px;
+}
+
+.article-back-nav a {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  color: #a6a6a6;
+  font-family: "Montserrat", sans-serif;
+  font-size: 13px;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.article-back-nav a:hover {
+  color: #ff00af;
+}

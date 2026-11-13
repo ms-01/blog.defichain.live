@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Atomic Swap Post-Mortem &amp; Further Steps</title>
+<link rel="stylesheet" href="../style.css">
+<link rel="stylesheet" href="../defichain-theme.css">
+<link rel="icon" type="image/svg+xml" href="../assets/favicon.svg">
+</head>
+<body>
+<header class="site-header">
+  <div class="header-inner">
+    <a class="brand" href="https://defichain.live/" aria-label="DeFiChain.live">
+      <img src="../assets/dfi.png" alt="DeFiChain">
+    </a>
+    <nav class="site-nav" aria-label="Main navigation">
+      <a href="https://defichain.live/">Explore</a>
+      <a class="active" href="../index.html">Blog</a>
+      <a href="https://defichain.live/community">Community</a>
+    </nav>
+  </div>
+</header>
+<main><nav class="article-back-nav" aria-label="Article navigation"><a href="../index.html">← Back to Blog</a></nav><article><h1>Atomic Swap Post-Mortem &amp; Further Steps</h1><p class="date">2022-01-04</p><p style="text-align: justify;"></p><div class="separator" style="clear: both; text-align: center;"><a href="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjH7p2COJnSciKcbDCpglozvUMNE9uNQWMubJGSZk11NRqtolgYEEHcxCSVeJX6CBA7HHDX8Ceiy1bvBh7_DTWhcLGcZ8M4l0c_pOV8H2y3SuyMnkfG5eh-qHGiL_70Z90RSlx4FVtVbPl5sEG74e92qu2rBiUBQ6kcgDXKvSasCX55_ZNDFsZRZi6WJpw/s2160/Atomic-Swap-Post-Mortem-_-blog--EN-.png" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><img border="0" data-original-height="806" data-original-width="2160" height="238" src="../media/0bded6cef1c169f94877.png" width="640"></a></div><br>This post-mortem article deals with the atomic swap exploit on the DeFiChain network that was brought to light on 2 January 2022. In the following sections, we will discuss what has happened, the various solutions to it, and most importantly — underscore the fact that all your dBTC are still backed.<p></p><p style="text-align: justify;"><br></p><p style="text-align: justify;"><b>What has happened?</b></p><p style="text-align: justify;">On 2nd January 2022 the DeFiChain community discovered an anomaly in the amount of dBTC tokens (BTC tokens on DeFiChain). Upon investigation, the developers found out that an attacker has managed to exploit a bug in the atomic swap function of the DeFiChain blockchain that seems to have existed since June 2021.</p><p style="text-align: justify;">Atomic swap contracts were introduced with the Eunos Upgrade in early June. These contracts facilitate the trustless and decentralized exchange of cryptocurrencies between two distinct blockchains without having to place reliance on any intermediaries, e.g. BTC to dBTC.</p><p style="text-align: justify;">The main goals being addressed with “atomic swaps” are the matchmaking between buyers and sellers, and the facilitation of price discovery. After buyers and sellers have been matched, atomic swaps facilitate the creation of a so-called Interchain Swap Contract between the two parties.</p><p style="text-align: justify;">The way atomic swaps work is that the maker and the taker agree on a price, i.e. 1 dBTC on the DeFiChain blockchain for 1 BTC on the Bitcoin blockchain. The maker is incentivized to initiate this trade at parity (1 BTC for 1 dBTC), because only then he receives 50% of the swap fee; the other half is burned. The swap fee is paid in DFI.</p><p style="text-align: justify;">What has happened in this exploit was that the attacker was able to change the fee amount from DFI to BTC while keeping the actual number the same. By taking advantage of this exploit, the attacker received a multiple of what they should have received in fees (i.e. instead of 0.1 DFI, the attacker received 0.1 BTC in fees).</p><p style="text-align: justify;"><br></p><p style="text-align: justify;"><b>How was it possible that nobody detected this exploit earlier?</b></p><p style="text-align: justify;">Well, this has to do with two main issues: the first one revolves around the fact that in the initial beta testing phase the team and the wider community were focussed on using very small token amounts to mitigate the risk of potentially losing their funds. The culmination of small trading amounts, coupled with even smaller trading fees, was the reason that nobody really looked into those numbers and even if someone had done it, it most likely would have gone undetected.</p><p style="text-align: justify;">The second issue has to do with the way how the outputs of the BTC swaps are tracked and administered. Usually the output rather than the fee amounts are tracked, especially when the amounts involved are small, which may explain the fact that it wasn’t detected over several months.</p><p style="text-align: justify;">To mitigate any issues ex ante, thorough testing by the community had been carried out prior to the Eunos upgrade. On top of that, continuous testing by the community had gone on since then and not a single vulnerability had been detected.</p><p style="text-align: justify;"><br></p><p style="text-align: justify;"><b>Why had no one seen it directly on the blockchain?</b></p><p style="text-align: justify;">To understand why it is nearly impossible to directly see this on the blockchain has to do with the way tokens are tracked on a blockchain. There are actually two ways of doing it: The first one is the UTXO model, where coins are tracked similar to people walking into a room by a tracer. The big disadvantage is a potential spam of the blockchain by super small amounts.</p><p style="text-align: justify;">The second model is the account model, similar to a doorman checking all people walking into and out of a club. This model is also used by DeFiChain. Yet it’s also not feasible to look into the club (into the blockchain) and count the number of people (coins on the blockchain), since people (coins) are moving around continuously, causing possible counting issues.</p><p style="text-align: justify;">Implementing measures to counter that are very tech resource intensive and were not in the main focus and interest of DeFiChain, since other POS like decentralized assets, EVM, etc. are more exciting from a user perspective. Blockchains like Ethereum take a similar approach, which is also why for example nobody really knows exactly how many ETH are out there.</p><p style="text-align: justify;"><br></p><p style="text-align: justify;"><b>How many dBTC were created?</b></p><p style="text-align: justify;">Due to account difficulties, it’s also impossible to count the exact number of bitcoins that have been injected into the system. Considering that there wasn’t any impact on the dBTC price prior to the bug detection, one can assume that it cannot have been all too relevant. Furthermore, it is impossible to get an accurate number and everyone who is claiming a specific number is most likely wrong due to the nature of the blockchain accounting architecture.</p><p style="text-align: justify;"><b><br></b></p><p style="text-align: justify;"><b>What are the options to guarantee that 1 dBTC = 1 BTC?</b></p><p style="text-align: justify;">Still, the blockchain needs to guarantee the parity of dBTC and BTC. Several possible solutions have been brought up by the community and are still up for discussion:</p><p style="text-align: justify;"></p><ol><li>Do nothing and leave the dBTC uncovered.</li><li>Blockchain rollback until approximately June 2021.</li><li>Cake DeFi should be held liable as the gateway to dBTC.</li><li>Smart contracts / staking rewards which would restore the dBTC.</li><li>Use the community fund to cover the dBTC via a special contract in the similar fashion to dTokens / loans.</li><li>Increase the trading fees by x% until the dBTC are fully covered.</li></ol><p></p><p style="text-align: justify;">These ideas should be thoroughly discussed in the upcoming days by the community. The solution will then be implemented by majority vote via a DFIP vote in the next weeks, depending on the priorities of the community.</p><p style="text-align: justify;">If you want to actively take part in the discussion, there is a scheduled Twitter Spaces on Jan 5, 2022 at 16:00 (4pm) UTC: https://twitter.com/i/spaces/1MYGNnDAyeRGw/</p><p style="text-align: justify;"><br></p><p style="text-align: justify;"><b>Closing Words</b></p><p style="text-align: justify;">The most important takeaway from this exploit is that your funds are safe. Even though an unknown amount of dBTC has been injected into the DeFiChain ecosystem, there is no reason to believe that your dBTCs are not backed. Furthermore, we would like to actively encourage the whole community to participate in a constructive discussion on all our social media channels, especially via Twitter and in our Telegram groups. Join us live tomorrow: https://twitter.com/i/spaces/1MYGNnDAyeRGw/</p><p class="date">Original: <a href="https://blog.defichain.com/2022/01/atomic-swap-post-mortem-further-steps.html">https://blog.defichain.com/2022/01/atomic-swap-post-mortem-further-steps.html</a></p></article></main>
+<footer class="blog-footer">
+  <div class="footer-panel">
+    <div class="footer-columns">
+      <div class="footer-column">
+        <h2>EXPLORE</h2>
+        <a href="https://defichain.live/">DeFiChain.live</a>
+        <a href="https://defichain.live/explore/dfi">$DFI</a>
+        <a href="https://defichain.live/explore/masternodes">Masternodes</a>
+      </div>
+      <div class="footer-column">
+        <h2>RESOURCES</h2>
+        <a href="https://github.com/ms-01">GitHub</a>
+        <a href="https://defiscan.live/">DeFiScan</a>
+      </div>
+      <div class="footer-column">
+        <h2>COMMUNITY</h2>
+        <a href="../index.html">Blog Archive</a>
+        <a href="https://github.com/ms-01/defichain.live">Website Repository</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <a href="https://defichain.live/" aria-label="DeFiChain.live">
+        <img src="../assets/dfi.png" alt="DeFiChain">
+      </a>
+      <p>
+        Independent preservation of historical DeFiChain Blog content.
+        Archived articles do not necessarily reflect the current state
+        of the DeFiChain ecosystem.
+      </p>
+    </div>
+  </div>
+</footer>
+</body>
+</html>

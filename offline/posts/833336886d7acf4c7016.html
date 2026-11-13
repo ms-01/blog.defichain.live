@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Building Your First dApp on DeFiChain&#x27;s MetaChain Layer: A Beginner&#x27;s Guide</title>
+<link rel="stylesheet" href="../style.css">
+<link rel="stylesheet" href="../defichain-theme.css">
+<link rel="icon" type="image/svg+xml" href="../assets/favicon.svg">
+</head>
+<body>
+<header class="site-header">
+  <div class="header-inner">
+    <a class="brand" href="https://defichain.live/" aria-label="DeFiChain.live">
+      <img src="../assets/dfi.png" alt="DeFiChain">
+    </a>
+    <nav class="site-nav" aria-label="Main navigation">
+      <a href="https://defichain.live/">Explore</a>
+      <a class="active" href="../index.html">Blog</a>
+      <a href="https://defichain.live/community">Community</a>
+    </nav>
+  </div>
+</header>
+<main><nav class="article-back-nav" aria-label="Article navigation"><a href="../index.html">← Back to Blog</a></nav><article><h1>Building Your First dApp on DeFiChain&#x27;s MetaChain Layer: A Beginner&#x27;s Guide</h1><p class="date">2024-06-12</p><div style="text-align: justify;"><div class="separator" style="clear: both; text-align: center;"><a href="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjTPRRw78J5qfuZqVGuL1bYHuWfi3YMCOgTsXbSWErYsuUXS4jClSkR4V8ix_l-nZtsf2_D9Pr6eg2dtktmMfDRj1MWKeI8K95ZFcY4pcPvhUvyKBHfw6t7Op_ZFYwhxTP50Sct6DfPGps_weuQ91iWIB9yBnUmFwuJx0tw3qA6SCh1s_tdAP5OpXou4a0/s1440/1440x536PX_Building-Your-First-dApp-on-DFC-MetaChain-Layer.png" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><img border="0" data-original-height="536" data-original-width="1440" height="238" src="../media/f9439a4f51bbf12e5152.png" width="640"></a></div><br>Creating a decentralized application (dApp) can seem a daunting task to those new to the blockchain space.&nbsp;</div><p style="text-align: justify;">However, it is surprisingly easier than many think. With the right guidance, anyone can start building their own projects on the blockchain.&nbsp;</p><p style="text-align: justify;">This guide will walk you through the process of developing an escrow application on DeFiChain's MetaChain (EVM) layer.&nbsp;</p><p style="text-align: justify;">We'll cover each step in detail, from setting up your development environment to deploying your dApp.</p><div class="separator" style="clear: both; text-align: center;"><iframe allowfullscreen="" class="BLOG_video_class" height="266" src="https://www.youtube.com/embed/nHqLLGfUEnM" width="320" youtube-src-id="nHqLLGfUEnM"></iframe></div><br><p><b>What is an Escrow Service in Blockchain?</b></p><p>An escrow service acts as a trusted third party that holds funds during a transaction between two parties, ensuring that both parties fulfill their obligations before releasing the funds.&nbsp;</p><p>This is particularly useful for freelance work, where a client might pay for services rendered. It ensures that the service provider gets paid only after the work is verified.</p><p><br></p><p><b>Step 1: Setting Up Your Development Environment</b></p><p>To get started, we need to set up our development environment. This involves installing the necessary tools and libraries.</p><p></p><ol style="text-align: left;"><li>Project Structure:</li><ul><li>Frontend: This will be handled by the escrow-web folder and will include HTML, CSS, JavaScript, and React components.</li><li>Smart Contracts: Managed with Hardhat in the hardhat folder, containing Solidity contracts and scripts for deployment and testing.</li></ul><li>Smart Contracts:</li><ul><li>Escrow Contract: Manages deposit, release, and refund of tokens.</li><li>Escrow Factory: Deploys new escrow contracts efficiently.</li></ul><li>Best Practices:</li><ul><li>Write comprehensive&nbsp;tests for smart contracts to cover edge cases and better security.</li><li>Use OpenZeppelin Contract libraries for standard contracts to save time and ensure reliability.</li></ul></ol><p><br></p><p><b>Step 2: Setting Up the Project with Hardhat</b></p><p>Hardhat is a development environment that consists of different components for editing, compiling, debugging, and deploying your smart contracts and dApps.</p><p></p><ol style="text-align: left;"><li>Initialize the&nbsp;Project:</li><ul><li>Open your terminal and run npx hardhat to set up the project structure. This command will create the necessary directories and configuration files for you.</li><li>Choose "Create a basic sample project" when prompted. This will set up a sample contract, test, and script to help you get started.</li></ul><li>Add OpenZeppelin Contracts:</li><ul><li>Install OpenZeppelin libraries by running npm install @openzeppelin/contracts. These libraries provide reusable and secure Solidity code for common tasks like token transfers and ownership.</li></ul><li>Write the Smart Contract:</li><ul><li>Imports: Import necessary OpenZeppelin contracts, such as ERC20, Ownable, and SafeERC20.</li><li>Functions: Define functions for deposit, release, and refund. Ensure each function includes necessary checks and emits relevant events.</li><li>Events: Create events to log transactions, such as Deposit, Release, and Refund.</li></ul></ol><p></p><p><br></p><p><b>Step 3: Testing the Contract</b></p><p>Hardhat comes with a testing framework that uses Mocha and Chai for writing tests.</p><p></p><ol style="text-align: left;"><li>Write Unit Tests:</li><ul><li>Create&nbsp;a test folder in your project directory and add test files for your contracts.</li><li>Write tests for each function in your contract, covering all possible scenarios and edge cases.</li><li>For complete test coverage, you can simply copy the test file from the project repo here.</li></ul><li>Run Tests:</li><ul><li>Use Hardhat's testing tools to run the tests: npx hardhat test. This command will execute your tests and show the results in the terminal.</li></ul></ol><p></p><p><br></p><p><b>Step 4: Deploying the Contract</b></p><p>Once your contract is tested, it's time to deploy it to the blockchain.</p><p></p><ol style="text-align: left;"><li>Compile the Contract:</li><ul><li>Run npx hardhat compile to compile your contract. This step translates your Solidity code into bytecode and ABI (Application Binary Interface), which are necessary for deployment.</li></ul><li>Deploy with MetaMask:</li><ul><li>Configure MetaMask to connect to the MetaChain testnet. You can do this by adding a new network in MetaMask settings and providing the testnet details.</li><li>Deploy the contract using a Hardhat deployment script. Create a script like scripts/deploy.js to handle the deployment logic.</li></ul><li>Verify Deployment:</li><ul><li>Use the MetaChain explorer to verify the contract deployment. Search for the transaction hash to ensure the contract was deployed successfully.</li></ul></ol><p></p><p><br></p><p><b>Step 5: Building the Frontend</b></p><p>The frontend of your dApp is what users interact with. We'll use React to build a simple user interface.</p><p></p><ol style="text-align: left;"><li>Set Up React Application:</li><ul><li>Create a React app for the frontend interface using create-react-app: npx create-react-app escrow-web.</li><li>Structure the React app to include components for input fields, buttons, and display areas for contract interactions.</li></ul><li>Connect Wallet with RainbowKit:</li><ul><li>Integrate RainbowKit to handle wallet connections. Install RainbowKit and dependencies by running npm install @rainbow-me/rainbowkit @rainbow-me/rainbowkit-wallets.</li><li>Implement wallet connect feature with MetaMask, allowing users to connect their wallet to interact with the dApp.</li></ul><li>User Interface:</li><ul><li>Create a simple UI with inputs for client, resolver, and provider. Include forms to capture user input and buttons to trigger contract functions.</li><li>Implement functions to interact with the smart contract for deposit, release, and refund operations. Connect with the blockchain using web3.js or ethers.js.</li></ul></ol><p></p><p><br></p><p><b>Step 6: Optimization Tips</b></p><p>Gas optimization is essential when working with smart contracts, as it directly impacts transaction costs.</p><p></p><ol style="text-align: left;"><li>Use Proxy Patterns:</li><ul><li>Proxy patterns allow you to minimize gas costs by reusing contract logic across multiple instances.</li></ul><li>Optimize Contract Functions:</li><ul><li>Reduce unnecessary computations and storage operations within your smart contracts to save gas costs.</li></ul></ol><p></p><p><br></p><p><b>Step 7: Deploying the dApp</b></p><p>After building and testing your dApp, it's time to deploy it for users to interact with.</p><p></p><ol style="text-align: left;"><li>Deploy Frontend:</li><ul><li>Host the React application using a static site service like Vercel or Netlify. Deploy the build output from npm run build.</li><li>Ensure the hosting service supports HTTPS and custom domain configurations.</li></ul><li>Test and Iterate:</li><ul><li>Ensure all functionalities work seamlessly on the testnet. Test with different scenarios and user interactions.</li><li>Gather feedback from testers and make necessary adjustments to improve usability and performance.</li></ul><li>Move to Mainnet:</li><ul><li>After thorough testing, deploy the contracts and frontend on the mainnet. Update configurations to point to mainnet addresses and endpoints.</li></ul></ol><p></p><p><br></p><p><b>Conclusion</b></p><p style="text-align: justify;">By following the above steps and leveraging OpenZeppelin libraries, Hardhat, and React, you can efficiently build and deploy decentralized applications with enhanced security and user experience on DeFiChain’s metaChain Layer.</p><p class="date">Original: <a href="https://blog.defichain.com/2024/06/building-your-first-dapp-on-defichains.html">https://blog.defichain.com/2024/06/building-your-first-dapp-on-defichains.html</a></p></article></main>
+<footer class="blog-footer">
+  <div class="footer-panel">
+    <div class="footer-columns">
+      <div class="footer-column">
+        <h2>EXPLORE</h2>
+        <a href="https://defichain.live/">DeFiChain.live</a>
+        <a href="https://defichain.live/explore/dfi">$DFI</a>
+        <a href="https://defichain.live/explore/masternodes">Masternodes</a>
+      </div>
+      <div class="footer-column">
+        <h2>RESOURCES</h2>
+        <a href="https://github.com/ms-01">GitHub</a>
+        <a href="https://defiscan.live/">DeFiScan</a>
+      </div>
+      <div class="footer-column">
+        <h2>COMMUNITY</h2>
+        <a href="../index.html">Blog Archive</a>
+        <a href="https://github.com/ms-01/defichain.live">Website Repository</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <a href="https://defichain.live/" aria-label="DeFiChain.live">
+        <img src="../assets/dfi.png" alt="DeFiChain">
+      </a>
+      <p>
+        Independent preservation of historical DeFiChain Blog content.
+        Archived articles do not necessarily reflect the current state
+        of the DeFiChain ecosystem.
+      </p>
+    </div>
+  </div>
+</footer>
+</body>
+</html>
